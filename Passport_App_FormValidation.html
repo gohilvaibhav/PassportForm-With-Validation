@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PassportApp-Form</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <script type="text/javascript" src="formvalidation.js"></script>
+</head>
+
+<body>
+    <form class="form" id="form" name="form" action="#" onsubmit="return validation()">
+
+        <p align="right" style="margin-right: 25px;">File Number (For Office Use Only)<br><br>
+            <input type="text" id="fnum" style="width: 16%;" autofocus />
+        </p>
+
+
+        <h2 class="h2">
+            GOVERNMENT OF INDIA, MINISTRY OF EXTERNAL AFFAIRS<br>
+            PASSPORT APPLICATION FORM
+        </h2>
+        <fieldset class="fieldset">
+            <h3 style="font-size: medium;" class="label"><b>Please read the Passport Instruction Booklet carefully
+                    before
+                    filling the form. Fill this form in CAPITAL LETTERS
+                    using blue/ black ink ball point pen only. Furnishing of incorrect information/ suppression of
+                    information would
+                    lead to rejection of the application and would attract penal provisions as prescribed under the
+                    Passports Act,
+                    1967. Please produce your original documents at the time of submission of the form.</b></h3>
+        </fieldset><br>
+
+        <!--1 and 1.1 -->
+        <div class="section">
+            <label class="label" style="background-color:white"><b>1.Service Required</b></label><br>
+
+
+            <br>
+            <label class="label"><b>1.1 Applying for</b></label><br><br>
+            <input type="radio" name="applay" id="fresh" onclick="disable1()" />
+            <label>Fresh Passport</label>
+            <input type="radio" name="applay" id="re" onclick="enable1()" />
+            <label>Re-issue of Passport</label><br><br>
+
+
+            <!-- 1.2-->
+            <label class="label"><b>1.2 If re-issue, specify reason(s)</b></label><br>
+
+
+
+            <table>
+                <tr>
+                    <td><input type="radio" name="re-issue" id="re-issue1" disabled onclick="enable4()" />
+                        <label>Validity Expired within 3 years/ Due to Expire</label>
+                    </td>
+                    <td><input type="radio" name="re-issue" id="re-issue2" disabled onclick="enable4()" />
+                        <label>Exhaustion of Pages</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="re-issue" id="re-issue3" disabled onclick="enable4()" />
+                        <label>Validity Expired more than 3 years ago</label>
+                    </td>
+                    <td><input type="radio" name="re-issue" id="re-issue4" disabled onclick="enable4()" />
+                        <label>Fresh Lost Passport</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="re-issue" id="re-issue5" disabled onclick="enable4()" />
+                        <label>Change in Existing Personal Particulars</label>
+                    </td>
+                    <td><input type="radio" name="re-issue" id="re-issue6" disabled onclick="enable4()" />
+                        <label>Damaged Passport</label>
+                    </td>
+                </tr>
+            </table><br>
+
+
+
+            <!--checkbox 1.3-->
+            <label class="label"><b>1.3 If change in existing personal particulars, specify reason(s)</b></label><br>
+
+            <table>
+                <tr>
+                    <td><input type="checkbox" name="ch7" id="ch1" disabled onclick="other1()"/>
+                        <label>Appearance</label>
+                    </td>
+                    <td><input type="checkbox" name="ch8" id="ch2" disabled  onclick="other1()"/>
+                        <label>Signature </label>
+                    </td>
+                    <td><input type="checkbox" name="ch9" id="ch3" disabled onclick="other1()" />
+                        <label>Given Name</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="ch10" id="ch4" disabled onclick="other1()"/>
+                        <label>Surname</label>
+                    </td>
+                    <td><input type="checkbox" name="ch11" id="ch5" disabled onclick="other1()" />
+                        <label>Date of Birth</label>
+                    </td>
+                    <td> <input type="checkbox" name="ch12" id="ch6" disabled onclick="other1()" />
+                        <label>Spouse Name</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="ch13" id="ch7" disabled  onclick="other1()"/>
+                        <label>Addres</label>
+                    </td>
+                    <td><input type="checkbox" name="ch14" id="ch8" disabled onclick="other1()" />
+                        <label>Delete ECR</label>
+                    </td>
+                    <td><input type="checkbox" name="ch15" id="ch9" disabled  onclick="other1()"/>
+                        <label>Others, Please specify</label>
+
+                    </td>
+                </tr>
+
+            </table>
+
+            <input type="text" placeholder="Other, Please specify" name="other" id="other"
+                style="margin-left:8px;" disabled><br><br>
+
+            <!--image-->
+            <label>Please paste your
+                unsigned recent colour
+                photograph with white
+                background of size
+                4.5cm X 3.5cm. [Not
+                needed for applicants
+                submitting the
+                application at Passport
+                Seva Kendra</label><br><br>
+            <!--accept="image\x-png,image\gpeg,image\gpeg"  -->
+            <input type="file" name="img" id="img" class="file" accept="image/x-png,image/gif,image/jpeg" /><br><br>
+            <!--signature-->
+            <label>Signature/ Left Hand Thumb
+                Impression of Illiterate
+                Applicant and Minors who
+                cannot sign.</label><br><br>
+            <input type="file" name="signature" id="signature" class="file" accept="image/x-png,image/gif,image/jpeg" /><br><br>
+
+            <!--1.4 ,1.5,1.6-->
+            <table>
+                <tr>
+                    <td><label class="label"><b>1.4 Type of Application </b></label></td>
+                    <td><label class="label"><b>1.5 Type of Passport Booklet </b></label></td>
+                    <td><label class="label"><b>1.6 Validity Required </b></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="application" id="application" />
+                        <label>Normal</label>
+                        <input type="radio" name="application" id="application" />
+                        <label>Tatkaal</label><br><br>
+                    </td>
+                    <td>
+                        <input type="radio" name="pbooklet" id="pbooklet" />
+                        <label>36 Pages</label>
+                        <input type="radio" name="pbooklet" id="pbooklet" />
+                        <label>60 Pages</label><br><br>
+
+                    </td>
+                    <td>
+                        <input type="radio" name="Validity" id="Validity" />
+                        <label>10 years</label>
+                        <input type="radio" name="Validity" id="Validity" />
+                        <label>Up to age 18</label><br><br>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- 2 & 2.1 Basic information for applicant-->
+        <div class="section">
+            <label class="label" style="background-color:white"><b>2. Applicant Details</b></label><br><br>
+            <label class="label"><b>2.1 Applicant's Given Name</b></label>
+
+            <input type="text" name="fname" id="fname" placeholder="Enter Name" maxlength="500">
+            <label class="label"><b>Surname</b></label>
+            <input type="text" name="sname" id="sname" placeholder="Enter Surname" maxlength="500"><br><br>
+            <label class="label">(Given Name means First name followed by Middle name (If any))(Initials not
+                allowed)</label><br><br>
+
+            <!--2.2-->
+            <label class="label"><b>2.2 Are you known by any other names (aliases)? </b></label>
+            <input type="radio" name="othername" id="othername" />
+            <label>Yes</label>
+            <input type="radio" name="othername" id="othername" />
+            <label>No</label><br>
+            <label class="label">(Given Name means First name followed by Middle name (If any))(Initials not
+                allowed)</label><br><br>
+            <!--2.3-->
+            <label class="label"><b>2.3 Have you ever changed your name? </b></label>
+            <input type="radio" name="changedyourname" id="changedyourname" />
+            <label>Yes</label>
+            <input type="radio" name="changedyourname" id="changedyourname" />
+            <label>No</label><br>
+            <label class="label">If yes, provide details in Column 2 of Supplementary Form
+            </label><br><br><br><br>
+
+
+            <label class="label"><b>2.4 Date of Birth (DD-MM-YYYY) </b></label>
+            <input type="text" name="dob" id="dob" style="margin-left: 40px;" placeholder="DD/MM/YYYY" onclick = "ValidateDOB()"><br><br>
+
+            <!--2.5-->
+            <label class="label"><b>2.5 Place of Birth (Village or Town or City</b></label>
+            <input type="text" name="bcity" id="bcity" placeholder="Enter Place Of Birth" style="margin-left: 1px;">
+            <label class="label"><b>District (If born in India)</b></label>
+            <input type="text" name="bdistrict" id="bdistrict" placeholder="Enter District "
+                style="margin-left: 65px;" /><br><br>
+            <label class="label"><b>State/ UT (If born in India)</b></label>
+            <input type="text" name="bstate" id="bstate" placeholder="Enter State" style="margin-left: 99px;" />
+            <label class="label"><b>Region/Country (If born abroad)
+                </b></label>
+            <input type="text" name="bcountry" id="bcountry" placeholder="Enter Country"
+                style="margin-left: 12px;" /><br><br>
+            <label class="label"><b>If born before 15/08/1947 in a place now in Pakistan or
+                    Bangladesh, write "Undivided India"</b></label><br><br>
+            <table>
+
+                <!--2.6-->
+                <tr>
+                    <td><label class="label"><b>2.6 Gender</b></label></td>
+                    <td><input type="radio" name="gender" id="gender" />
+                        <label>Male</label>
+                    </td>
+                    <td><input type="radio" name="gender" id="gender" />
+                        <label>Female</label>
+                    </td>
+                    <td><input type="radio" name="gender" id="gender" />
+                        <label>Transgender</label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label class="label"><b>2.7 Marital Status</b></label></td>
+                    <td><input type="radio" name="maritals" id="maritals" />
+                        <label>Single</label>
+                    </td>
+                    <td><input type="radio" name="maritals" id="maritals" />
+                        <label>Marride</label>
+                    </td>
+                    <td><input type="radio" name="maritals" id="maritals" />
+                        <label>Divorced</label>
+                    </td>
+                    <td><input type="radio" name="maritals" id="maritals" />
+                        <label>Widower</label>
+                    </td>
+                    <td><input type="radio" name="maritals" id="maritals" />
+                        <label>Separated</label>
+                    </td>
+                </tr>
+                <!--2.8-->
+                <tr>
+                    <td><label class="label"><b>2.8 Citizenship of India by</b></label></td>
+                    <td><input type="radio" name="citizenship" id="citizenship" />
+                        <label>Birth</label>
+                    </td>
+                    <td><input type="radio" name="citizenship" id="citizenship" />
+                        <label>Descent</label>
+                    </td>
+                    <td><input type="radio" name="citizenship" id="citizenship" />
+                        <label>Registration
+                        </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </table><br>
+            <!--2.9,2.10,2.11-->
+            <label class="label"><b>2.9 PAN (If available)</b></label>
+            <input type="text" name="pan" id="pan" placeholder="Enter PAN No" style="margin-left: 40px;" /><br><br>
+            <label class="label"><b>2.10 Voter ID (If available)</b></label>
+            <input type="text" name="voterid" id="voterid" placeholder="Enter Voter ID" /><br><br>
+
+            <label class="label"><b>2.11 Employment Type</b></label><br><br>
+            <table>
+                <tr>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>PSU </label>
+                    </td>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Government </label>
+                    </td>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Statutory Body</label>
+                    </td>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Retired Government Servant</label>
+                    </td>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Self Employed</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Private</label>
+                    </td>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Homemaker </label>
+                    </td>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Not Employed</label>
+                    </td>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Retired-Private Service</label>
+                    </td>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Student</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Others</label>
+                    </td>
+                    <td><input type="radio" name="employment" id="employment" />
+                        <label>Owners, Partners </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+            </table><br>
+            <!--2.12-->
+            <label class="label"><b>2.12 If employed in Government/ Statutory Body/ PSU, specify organization
+                    name</b></label>
+            <input type="text" name="organization" id="organization" placeholder="Enter employed"
+                style="margin-left: 30px;" /><br><br>
+            <!--2.13-->
+            <label class="label"><b>2.13 Is either of your parent (in case of minor)/ spouse, a government
+                    servant?</b></label>
+            <input type="radio" name="gservant" id="gservant" />
+            <label>Yes</label>
+            <input type="radio" name="gservant" id="gservant" />
+            <label>No</label><br><br>
+            <!--2.14-->
+            <label class="label"><b>2.14 Educational Qualification</b></label><br><br>
+            <table>
+                <tr>
+                    <td><input type="radio" name="qualification" id="qualification" />
+                        <label>7th pass or less </label>
+                    </td>
+                    <td><input type="radio" name="qualification" id="qualification" />
+                        <label>Between 8th and 9th Standard
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="qualification" id="qualification" />
+                        <label>10th pass and above</label>
+                    </td>
+                    <td><input type="radio" name="qualification" id="qualification" />
+                        <label>Graduate and abov</label>
+                    </td>
+                </tr>
+            </table><br>
+            <!--2.15-->
+            <label class="label"><b>2.15 Are you eligible for Non-ECR category?</b></label>
+            <input type="radio" name="ecr" id="ecr" />
+            <label>Yes</label>
+            <input type="radio" name="ecr" id="ecr" />
+            <label>No</label><br><br>
+            <!--2.16 & 2.17-->
+            <label class="label"><b>2.16 Visible Distinguishing Mark</b></label>
+            <!-- <input type="text" name="visibledmark" id="visibledmark" placeholder="Enter Distinguishing Mark"
+                style="margin-left:10px" /><br><br> -->
+
+            <select name="visibledmark" id="visibledmark">
+                <option value="face">visibledmark</option>
+                <option value="face">face</option>
+                <option value="hand">hand</option>
+                <option value="mercedes">chin</option>
+                <option value="audi">nose</option>
+            </select><br>
+
+            <label class="label"><b>2.17 Aadhaar Number</b></label>
+            <input type="text" name="aadhaarno" id="aadhaarno" placeholder="Enter  Aadhaar Number"
+                style="margin-left:70px"><br>
+
+
+
+        </div>
+        <div class="section">
+            <!--3 and 
+            -->
+            <label class="label" style="background-color:white"><b>3. Family Details</b></label><br><br>
+
+            <label class="label"><b>3.1 Father's Given Name</b></label>
+            <input type="text" name="fathername" id="fathername" placeholder="Enter  Father Name "
+                style="margin-left: 55px;" maxlength="500" />
+            <label class="label"><b>Surname</b></label>
+            <input type="text" name="fsurname" id="fsurname" placeholder="Enter  surname " style="margin-left: 30px;"
+                maxlength="500" /><br><br>
+            <!--3.2-->
+            <label class="label"><b>3.2 Mother's Given Name</b></label>
+            <input type="text" name="mothername" id="mothername" placeholder="Enter  Mother Name "
+                style="margin-left: 50px;" maxlength="500" />
+            <label class="label"><b>Surname</b></label>
+            <input type="text" name="msurname" id="msurname" placeholder="Enter  surname " style="margin-left: 30px;"
+                maxlength="500" /><br><br>
+            <!--3.3-->
+            <label class="label"><b>3.3 Guardian's Given Name </b></label>
+            <input type="text" name="guardianname" id="guardianname" placeholder="Enter  Guardian's Name "
+                style="margin-left:35px;" maxlength="500" />
+            <label class="label"><b>Surname</b></label>
+            <input type="text" name="gsurname" id="gsurname" placeholder="Enter  surname " style="margin-left: 30px;"
+                maxlength="500" /><br><br>
+            <!--3.4-->
+            <label class="label"><b>3.4 Spouse's Given Name </b></label>
+            <input type="text" name="spousename" id="spousename" placeholder="Enter Spouse's Given Name "
+                style="margin-left: 50px;" maxlength="500" />
+            <label class="label"><b>Surname</b></label>
+            <input type="text" name="ssurname" id="ssurname" placeholder="Enter  surname " style="margin-left: 30px;"
+                maxlength="500" /><br><br>
+
+            <!--3.5-->
+            <label class="label"><b>3.5 If applicant is minor, provide following details</b></label><br><br>
+            <label class="label"><b>Parent's Passport Details </b></label>
+            <label> (If passport has been applied for but not received, give File Number)</label><br><br>
+
+            <label class="label">Father/ Legal Guardian's File/ Passport Number</label>
+            <input type="text" name="fatherpassportnumber" id="fatherpassportnumber"
+                placeholder="Enter Passport Number " style="margin-left: 7px;" />
+
+            <label style="margin-left: 5px;">Nationality, if not Indian</label>
+            <input type="text" name="fathernationality" id="fathernationality"
+                placeholder="Enter Nationality,if not Indian " style="margin-left: 7px;" /><br><br>
+
+            <label class="label">Mother/ Legal Guardian's File/ Passport Number</label>
+            <input type="text" name="motherpassportnumber" id="motherpassportnumber"
+                placeholder="Enter Passport Number " />
+
+            <label style="margin-left: 7px;">Nationality, if not Indian</label>
+            <input type="text" name="mothernationality" id="mothernationality"
+                placeholder="Enter Nationality,if not Indian " style="margin-left: 3px;" />
+        </div>
+        <div class="section">
+            <!--4 & 4.1-->
+            <label class="label" style="background-color:white"><b>4. Present Residential Address Details (Where
+                    applicant
+                    presently
+                    resides)</b></label><br><br>
+
+            <label class="label"><b>4.1 House No. and Street Name</b></label>
+            <input type="text" name="houseno" id="houseno" placeholder="Enter Street Number " maxlength="500" onkeypress="allowAlphaNumericSpace(event)" onkeyup="this.value = this.value.toUpperCase();" />
+
+            <label class="label"><b> Village or Town or City</b></label>
+            <input type="text" name="village" id="village" placeholder="Village or Town or City" onkeypress="return /[a-z ]/i.test(event.key)" onkeyup="this.value = this.value.toUpperCase();"/><br><br>
+
+            <label class="label"><b> District</b></label>
+            <input type="text" name="districtofvillage" id="districtofvillage" placeholder="Enter District"
+                style="margin-left:163px ;" onkeypress="return /[a-z ]/i.test(event.key)" onkeyup="this.value = this.value.toUpperCase();"/>
+
+            <label class="label"><b> Police Station</b></label>
+            <input type="text" name="policestation" id="policestation" placeholder="Enter Police Station" onkeypress="return /[a-z ]/i.test(event.key)" onkeyup="this.value = this.value.toUpperCase();"
+                style="margin-left:63px ;" /><br><br>
+
+            <label class="label"><b> State/ UT</b></label>
+            <input type="text" name="ut" id="ut" placeholder="Enter State" style="margin-left:148px ;"onkeypress="return /[a-z ]/i.test(event.key)" onkeyup="this.value = this.value.toUpperCase();" />
+
+            <label class="label"><b>PIN</b></label>
+            <input type="text" name="pan1" id="pan1" placeholder="Enter PIN" style="margin-left:133px ;" maxlength="6" onkeypress="return validateNumber(event)"
+            /><br><br>
+
+            <label class="label"><b> Mobile Number</b></label>
+            <input type="text" name="monumber" id="monumber" placeholder="Enter Mobile Numbe"
+                style="margin-left:106px ;" maxlength="10" onkeypress="return validateNumber(event)"
+                />
+
+            <label class="label"><b> Telephone Number</b></label>
+            <input type="text" name="telnumber" id="telnumber" placeholder="Enter  Telephone Number" maxlength="11" onkeypress="return validateNumber(event)"
+
+                style="margin-left:28px ;" /><br><br>
+
+            <label class="label"><b> E-mail ID</b></label>
+            <input type="text" name="email" id="email" placeholder=" E-mail ID" style="margin-left:148px ;" /><br><br>
+            <!--4.2-->
+            <label class="label"><b> 4.2 Is permanent address same as present address?</b></label>
+            <input type="radio" name="presentaddress" id="presentaddress1" onclick="disable2()" />
+            <label>Yes</label>
+            <input type="radio" name="presentaddress" id="presentaddress" onclick="enable2()" />
+            <label>No</label><br><br>
+
+            <label class="label"><b>4.2 House No. and Street Name</b></label>
+            <input type="text" name="houseno1" id="houseno1" placeholder="Enter Street Number " disabled maxlength="500"  onkeypress="allowAlphaNumericSpace(event)" onkeyup="this.value = this.value.toUpperCase();" />
+
+            <label class="label"><b> Village or Town or City</b></label>
+            <input type="text" name="village1" id="village1" placeholder="Village or Town or City" disabled onkeypress="return /[a-z ]/i.test(event.key)" onkeyup="this.value = this.value.toUpperCase();"/><br><br>
+
+            <label class="label"><b> District</b></label>
+            <input type="text" name="districtofvillage1" id="districtofvillage1" placeholder="Enter District" disabled onkeypress="return /[a-z ]/i.test(event.key)" onkeyup="this.value = this.value.toUpperCase();"
+                style="margin-left:163px ;" />
+
+            <label class="label"><b> Police Station</b></label>
+            <input type="text" name="policestation1" id="policestation1" placeholder="Enter Police Station" disabled onkeypress="return /[a-z ]/i.test(event.key)" onkeyup="this.value = this.value.toUpperCase();"
+                style="margin-left:63px ;" /><br><br>
+
+            <label class="label"><b> State/ UT</b></label>
+            <input type="text" name="ut1" id="ut1" placeholder="Enter State" style="margin-left:148px ;" disabled onkeypress="return /[a-z ]/i.test(event.key)" onkeyup="this.value = this.value.toUpperCase(); "/>
+
+            <label class="label"><b>PIN</b></label>
+            <input type="text" name="pan2" id="pan2" placeholder="Enter PIN" style="margin-left:133px ;"
+                disabled maxlength="6" onkeypress="return validateNumber(event)"/>
+
+            <!-- <label class="label"><b> Mobile Number</b></label>
+            <input type="text" name="monumber1" id="monumber1" placeholder="Enter Mobile Numbe" disabled
+                style="margin-left:106px ;" />
+
+            <label class="label"><b> Telephone Number</b></label>
+            <input type="text" name="telnumber1" id="telnumber1" placeholder="Enter  Telephone Number" disabled
+                style="margin-left:28px ;" /><br><br>
+
+            <label class="label"><b> E-mail ID</b></label>
+            <input type="text" name="email1" id="email1" placeholder=" E-mail ID" style="margin-left:148px ;"
+                disabled /> -->
+                <br><br>
+        </div>
+        <div class="section">
+            <!--5-->
+            <label class="label" style="background-color:white"><b>5. Emergency Contact Details</b></label><br><br>
+            <label class="label"><b>Name and Address</b></label>
+            <input type="text" name="address" id="address" placeholder="Enter Name and Address"
+                style="margin-left:88px ;" disabled  onkeypress="allowAlphaNumericSpace(event)" onkeyup="this.value = this.value.toUpperCase();"/>
+            <label class="label"><b> Mobile Number</b></label>
+            <input type="text" name="emonumber" id="emonumber" placeholder="Enter Mobile Number"
+                style="margin-left:46px ;" disabled  maxlength="10" onkeypress="return validateNumber(event)"/><br><br>
+
+            <label class="label"><b> Telephone Number</b></label>
+            <input type="text" name="etelnumber" id="etelnumber" placeholder="Enter Telephone Number"
+                style="margin-left:88px ;" disabled maxlength="11" onkeypress="return validateNumber(event)"/>
+
+            <label class="label"><b> E-mail ID</b></label>
+            <input type="text" name="emailid" id="emailid" placeholder="Enter E-mail ID" style="margin-left:88px ;"
+                disabled /><br><br>
+        </div>
+
+        <!--6-->
+        <div class="section">
+            <label class="label" style="background-color:white"><b>6. Previous Passport/ Application
+                    Details</b></label><br><br>
+
+            <label class="label"><b>6.1 Details of latest held/ existing/ lost/ damaged Ordinary Passport/ Identity
+                    Certificate</b></label><br><br>
+
+
+
+            <label class="label">Passport Certificate Number</label>
+            <input type="text" name="pcertificateno" id="pcertificateno" placeholder="Passport Certificate No"
+                disabled onkeypress="allowAlphaNumeric(event)" onkeyup="this.value = this.value.toUpperCase();"/>
+            <label style="margin-left: 18px;">Date of Issue </label>
+            <input type="date" name="doi" id="doi" style="margin-left:30px ;" disabled /><br><br>
+            <label style="margin-left: 8px;">Date of Expiry </label>
+            <input type="date" name="doe" id="doe" style="margin-left:100px ;" disabled />
+
+            <label class="label">Place of Issue </label>
+            <input type="text" name="poi" id="poi" placeholder="Place of Issue" style="margin-left:15px ;"
+                disabled onkeypress="return /[a-z ]/i.test(event.key)" onkeyup="this.value = this.value.toUpperCase();"/><br><br>
+            <label class="label">If you have held/ hold any diplomatic/ official passport, provide details in Column 6
+                of
+                Supplementary Form</label><br><br>
+
+            <label class="label"><b>6.2 Have you ever applied for passport, but not issued?</b></label>
+            <input type="radio" name="issued" id="issued" onclick="enable3()" />
+            <label>Yes</label>
+            <input type="radio" name="issued" id="issued1" onclick="disable3()" />
+            <label>No (If yes, provide the following
+                details)
+            </label><br><br>
+
+
+
+            <label class="label">File Number </label>
+            <input type="text" name="filenum" id="filenum" placeholder="File Number" style="margin-left:95px ;"
+                disabled />
+            <label style="margin-left: 20px;">Month/Year of applying</label>
+            <input type="month" name="moa" id="moa" placeholder="Year of applying" disabled /><br><br>
+            <label class="label">Name of passport office </label>
+            <input type="text" name="nop" id="nop" placeholder="Name of passport office" style="margin-left:23px ;"
+                disabled  onkeypress="return /[a-z ]/i.test(event.key)" onkeyup="this.value = this.value.toUpperCase();"/>
+        </div>
+        <div class="section">
+            <!--7-->
+            <label class="label" style="background-color:white"><b>7.Other details</b></label><br><br>
+            <!--7.1-->
+            <table class="label" style="width: 100%;">
+                <label class="label"><b>7.1 Provide the following details if there are any criminal proceedings pending
+                        against the applicant.</b></label><br>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.1.1 Are any proceedings in respect of an offence alleged to have been committed by
+                                you pending before a criminal court in India?</strong><br />
+                            If yes, fill Column 6.1 of Supplementary Form
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails1" id="odetails1">Yes</input>
+                        <input type="radio" name="odetails1" id="odetails1">No</input>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td style="width: 90%;">
+                        <label><strong> 7.1.2 Has any warrant or summons for your appearance been issued & pending
+                                before
+                                a court under any law for the time being in force?</strong><br />
+                            If yes, fill Column 6.2 of Supplementary Form
+                        </label>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails12" id="odetails2">Yes</input>
+                        <input type="radio" name="odetails12" id="odetails2">No</input>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 90%;">
+                        <label><strong> 7.1.3 Has a warrant for your arrest been issued by a court under any law for the
+                                time
+                                being in force?</strong><br>
+                            If yes, fill Column 6.3 of Supplementary Form
+                        </label>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails3" id="odetails3">Yes</input>
+                        <input type="radio" name="odetails3" id="odetails3">No</input>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 90%;">
+                        <label><strong> 7.1.4 Has an order prohibiting your departure from India been made by any
+                                court?</strong><br>
+                            If yes, fill Column 6.4 of Supplementary Form
+                        </label>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails4" id="odetails4">Yes</input>
+                        <input type="radio" name="odetails4" id="odetails4">No</input>
+                    </td>
+                </tr>
+            </table><br>
+            <!--7.2-->
+            <table class="label" style="width: 100%;">
+                <label class="label"><b>7.2 Provide the following details if the applicant has been convicted by a court
+                        in
+                        India.</b></label><br>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.2.1Have you, at any time during the period of five years immediately preceding the
+                                date
+                                of this application, been convicted by a court in India for any offence
+                                involving moral turpitude and sentenced in respect thereof to imprisonment for
+                                not less than two years?</strong><br>
+                            If yes, fill Column 6.5 of Supplementary Form
+
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails5" id="odetails5">Yes</input>
+                        <input type="radio" name="odetails5" id="odetails5">No</input>
+                    </td>
+                </tr>
+
+
+            </table>
+
+
+            <!--7.3-->
+            <table class="label" style="width: 100%;">
+                <label class="label"><b>7.3 Provide the following details if the applicant has been refused/denied
+                        passport.</b></label><br>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.3.1 Have you ever been refused/denied passport? Yes No</strong><br>
+                            If yes, fill Column 6.6 of Supplementary Form
+
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails6" id="odetails6">Yes</input>
+                        <input type="radio" name="odetails6" id="odetails6">No</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.3.2 Has your passport ever been impounded?</strong><br>
+                            If yes, fill Column 6.7 of Supplementary Form
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails7" id="odetails7">Yes</input>
+                        <input type="radio" name="odetails7" id="odetails17">No</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.3.3 Has your passport ever been revoked?</strong><br>
+                            If yes, fill Column 6.8 of Supplementary Form
+
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails8" id="odetails8">Yes</input>
+                        <input type="radio" name="odetails8" id="odetails8">No</input>
+                    </td>
+                </tr>
+
+            </table>
+            <!--7.4-->
+
+            <table class="label" style="width: 100%;">
+                <label class="label"><b>7.4 Provide the following details if applicant has applied for or been granted
+                        foreign citizenship.</b></label><br>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.4.1 Have you ever been granted citizenship by any other
+                                region/country?</strong><br>
+                            If yes, fill Column 6.9 of Supplementary Form
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails9" id="odetails9">Yes</input>
+                        <input type="radio" name="odetails9" id="odetails9">No</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.4.2 Have you ever held the passport of any other region/country at any
+                                time?</strong>
+                            <br> If yes, fill Column 6.10 of Supplementary Form
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails10" id="odetails10">Yes</input>
+                        <input type="radio" name="odetails10" id="odetails10">No</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.4.3 Have you ever surrendered your Indian passport?</strong><br>
+                            If yes, fill Column 6.11 of Supplementary Form
+
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails11" id="odetails11">Yes</input>
+                        <input type="radio" name="odetails11" id="odetails11">No</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.4.4 Have you ever applied for renunciation of Indian citizenship?<br>
+                                If yes, fill Column 6.12 of Supplementary Form
+
+
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails12" id="odetails12">Yes</input>
+                        <input type="radio" name="odetails12" id="odetails12">No</input>
+                    </td>
+                </tr>
+
+            </table>
+
+            <!--7.5-->
+
+            <table class="label" style="width: 100%;">
+                <label class="label"><b>7.5 Provide the following details if applicant has returned to India on
+                        Emergency
+                        Certificate.</b></label><br>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.5.1 Have you ever returned to India on Emergency Certificate (EC)?
+                            </strong><br>If yes, fill Column 6.13 of Supplementary Form
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails13" id="odetails13">Yes</input>
+                        <input type="radio" name="odetails13" id="odetails13">No</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.5.2 Have you ever been deported from any country?
+                                If yes, was the cost borne by the Government of India and </strong><br>if so, has the
+                            same been refunded?
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails14" id="odetails14">Yes</input>
+                        <input type="radio" name="odetails14" id="odetails14">No</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 90%;">
+                        <p><strong>7.5.3 Have you ever been repatriated from any country back to India?</strong><br>
+                            If yes, was the cost borne by the Government of India and if so, has the
+                            same been refunded?
+
+                        </p>
+                    </td>
+                    <td style="width: 10%;">
+                        <input type="radio" name="odetails15" id="odetails15">Yes</input>
+                        <input type="radio" name="odetails15" id="odetails15">No</input>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+        <div class="section">
+            <label class="label" style="background-color:white"><b>8. Fee Details (Not to be filled by applicants
+                    submitting
+                    the application at Passport
+                    Seva Kendra)</b></label><br><br>
+            <label class="label"><b>8.1 Fee amount in (Rs)</b></label>
+            <br><br> <input type="text" name="fee" id="fee" placeholder=" Enter Feeamount in (Rs)"
+                onkeypress="return validateNumber(event)" /><br><br>
+            <label class="label"><b>8.2 If paid by Demand Draft (DD), provide the following details</b></label><br><br>
+
+            <label class="label">DD Number</label>
+            <input type="text" name="dd" id="dd" placeholder="Enter DD Number"
+                onkeypress="return validateNumber(event)" />
+
+            <label style="margin-left:30px ;">DD Issue Date</label>
+            <input type="date" name="dddate" id="dddate" style="margin-left:10px ;" />
+
+            <label style="margin-left:30px ;"> DD Expiry Date</label>
+            <input type="date" name="ddedate" id="ddedate" style="margin-left:10px ;" /><br><br>
+
+            <label class="label">Bank Name</label>
+            <input type="text" name="bankname" id="bankname" placeholder=" Enter Bank Name" />
+
+            <label style="padding-left: 35px;">Branch</label>
+            <input type="text" name="branch" id="branch" placeholder=" EnterBranch"
+                style="margin-left: 55px;" /><br><br>
+
+        </div>
+        <div class="section">
+            <!--9-->
+            <label class="label" style="background-color:white"><b>9. Enclosures</b></label><br><br>
+
+            <label class="label">1.</label>
+            <input type="file" name="file1" id="file1" />
+            <input type="text" name="d1" id="d1" placeholder="Enter Document Name" />
+
+
+            <label> 2.</label>
+            <input type="file" name="file2" id="file2" />
+            <input type="text" name="d2" id="d2" placeholder="Enter Document Name" /><br><br>
+
+
+            <label style="margin-left: 12px;">3.</label>
+            <input type="file" name="file3" id="file3" style="margin-left: 10px;" />
+            <input type="text" name="d3" id="d3" placeholder="Enter Document Name" style="margin-left: 1px;" />
+
+
+            <label> 4.</label>
+            <input type="file" name="file4" id="file4" />
+            <input type="text" name="d4" id="d4" placeholder="Enter Document Name" /><br><br>
+
+
+            <label class="label">5.</label>
+            <input type="file" name="file5" id="file5" />
+            <input type="text" name="d5" id="d5" placeholder="Enter Document Name" />
+
+            <label style="margin-left: 2px;"> 6.</label>
+            <input type="file" name="file6" id="file6" />
+            <input type="text" name="d6" id="d6" placeholder="Enter Document Name" /><br><br>
+
+            <label style="margin-left: 12px;">7.</label>
+            <input type="file" name="file7" id="file7" style="margin-left: 10px;" />
+            <input type="text" name="d7" id="d7" placeholder="Enter Document Name" />
+
+
+            <label> 8.</label>
+            <input type="file" name="file8" id="file8" />
+            <input type="text" name="d8" id="d8" placeholder="Enter Document Name" /><br><br>
+
+
+            <label class="label">9.</label>
+            <input type="file" name="file9" id="file9" />
+            <input type="text" name="d9" id="d9" placeholder="Enter Document Name" />
+
+
+            <label> 10.</label>
+            <input type="file" name="file10" id="file10" />
+            <input type="text" name="d10" id="d10" placeholder="Enter Document Name" />
+
+        </div>
+
+        <div class="section">
+            <!--10-->
+            <label class="label" style="background-color:white"><b>10. Self Declaration</b></label><br><br>
+            <fieldset class="fieldset">
+                <p>I owe allegiance to the sovereignty, unity & integrity of India, and have not voluntarily acquired
+                    citizenship or
+                    travel document of any other country.<br> I have not lost, surrendered or been deprived of the
+                    citizenship
+                    of India.
+                    I have not contravened any of the conditions relating to the possession and<br> use of an Indian
+                    passport
+                </p>
+
+                <p>I affirm that the information and particulars given by me in this form are true and correct. I
+                    further
+                    state
+                    that I
+                    am not suppressing any material information<br> in this regard. I further affirm that the enclosures
+                    and
+                    documentary
+                    proof submitted in support of my application for an Indian passport are authentic and <br>solely
+                    pertain
+                    to
+                    me and
+                    I am fully responsible for the accuracy of the same. I am liable to be penalized or prosecuted if
+                    found
+                    otherwise.
+                    I am aware that<br> under the Passports Act, 1967 it is a criminal offence to furnish any false
+                    information
+                    or to
+                    suppress any material information with a view to obtaining<br> passport or travel document.</p>
+
+                <p>I have read and understood the contents of the above and by submitting this form certify that all the
+                    information
+                    submitted by me in the form is bonafide.
+                </p>
+
+            </fieldset><br>
+            <label>Place</label> <input type="text" name="place" id="place" placeholder="Enter Place" /><br><br>
+            <!-- <label>Date</label> <input type="date" name="date" id="date"><br><br> -->
+            Date (DD-MM-YYYY) <p>
+                <script> document.write(new Date().toLocaleDateString()); </script>
+            </p>
+            <label>Signature/ Left Hand
+                Thumb Impression of
+                Applicant (If applicant is
+                minor, either parent to
+                sign)
+            </label><br><br>
+            <input type="file" name="signature1" id="signature1" class="file"
+                accept="image/x-png,image/gif,image/jpeg" /><br><br>
+
+            <strong>Required Field</strong>
+            <div class="font">
+
+
+                <span id="fnum-err"></span>
+                <!-- <p id="applay-err"><a href='#applay' style='color:red'>1.1 Please Select applyfor:</a></p><br> -->
+                <!-- <span id="applay-err" ><p><a href='#applay' style='color:red'></a>1.1 Please Select applyfor:</a></p> </span><br> -->
+                <span id="applay-err"></span>
+                <span id="re-issue-err"></span>
+                <span id="other-err"></span>
+                <span id="img-err"></span>
+                <span id="signature-err"></span>
+                <span id="application-err"></span>
+                <span id="pbooklet-err"></span>
+                <span id="Validity-err"></span>
+                <span id="fname-err"></span>
+                <span id="sname-err"></span>
+                <span id="othername-err"></span>
+                <span id="changedyourname-err"></span>
+                <span id="dob-err"></span>
+                <span class="error" id="lblError"></span>
+                <span id="bcity-err"></span>
+                <span id="bdistrict-err"></span>
+                <span id="bstate-err"></span>
+                <span id="bcountry-err"></span>
+                <span id="gender-err"></span>
+                <span id="maritals-err"></span>
+                <span id="citizenship-err"></span>
+                <span id="pan-err"></span>
+                <span id="voterid-err"></span>
+                <span id="employment-err"></span>
+                <span id="organization-err"></span>
+                <span id="gservant-err"></span>
+                <span id="qualification-err"></span>
+                <span id="ecr-err"></span>
+                <span id="visibledmark-err"></span>
+                <span id="aadhaarno-err"></span>
+                <span id="fathername-err"></span>
+                <span id="fsurname-err"></span>
+                <span id="mothername-err"></span>
+                <span id="msurname-err"></span>
+                <span id="guardianname-err"></span>
+                <span id="gsurname-err"></span>
+                <span id="spousename-err"></span>
+                <span id="ssurname-err"></span>
+                <span id="fatherpassportnumber-err"></span>
+                <span id="fathernationality-err"></span>
+                <span id="motherpassportnumber-err"></span>
+                <span id="mothernationality-err"></span>
+                <span id="houseno-err"></span>
+                <span id="village-err"></span>
+                <span id="districtofvillage-err"></span>
+                <span id="policestation-err"></span>
+                <span id="ut-err"></span>
+                <span id="pan1-err"></span>
+                <span id="monumber-err"></span>
+                <span id="telnumber-err"></span>
+                <span id="email-err"></span>
+                <span id="presentaddress-err"></span>
+                <!-- current addres and permanent both are diffrent-->
+                <span id="houseno1-err"></span>
+                <span id="village1-err"></span>
+                <span id="districtofvillage1-err"></span>
+                <span id="policestation1-err"></span>
+                <span id="ut1-err"></span>
+                <span id="pan2-err"></span>
+                <!-- <span id="monumber1-err"></span>
+                <span id="telnumber1-err"></span>
+                <span id="email1-err"></span> -->
+                <!--  Emergency Contact Details -->
+                <span id="address-err"></span>
+                <span id="emonumber-err"></span>
+                <span id="etelnumber-err"></span>
+                <span id="emailid-err"></span>
+                <span id="pcertificateno-err"></span>
+                <span id="doi-err"></span>
+                <span id="doe-err"></span>
+                <span id="poi-err"></span>
+                <span id="issued-err"></span>
+                <span id="filenum-err"></span>
+                <span id="moa-err"></span>
+                <span id="nop-err"></span>
+                <span id="odetails1-err"></span>
+                <span id="odetails2-err"></span>
+                <span id="odetails3-err"></span>
+                <span id="odetails4-err"></span>
+                <span id="odetails5-err"></span>
+                <span id="odetails6-err"></span>
+                <span id="odetails7-err"></span>
+                <span id="odetails8-err"></span>
+                <span id="odetails9-err"></span>
+                <span id="odetails10-err"></span>
+                <span id="odetails11-err"></span>
+                <span id="odetails12-err"></span>
+                <span id="odetails13-err"></span>
+                <span id="odetails14-err"></span>
+                <span id="odetails15-err"></span>
+                <span id="fee-err"></span>
+                <span id="dd-err"></span>
+                <span id="dddate-err"></span>
+                <span id="ddedate-err"></span>
+                <span id="bankname-err"></span>
+                <span id="branch-err"></span>
+                <span id="d1-err"></span>
+                <span id="place-err"></span>
+                <!-- <span id="date-err"></span> -->
+                <span id="signature1-err"></span>
+
+
+
+
+            </div>
+
+            <center> <input type="submit" class="button">
+
+                <input type="reset" class="button">
+            </center>
+        </div>
+    </form>
+</body>
+
+</html>
